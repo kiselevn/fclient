@@ -4,6 +4,16 @@ import { ClientsContainer } from '../../containers';
 import { Client } from '../../components';
 import clients from '../../assets/list.json';
 
+function renderClients(clients) {
+  const clientsList = [];
+
+  for (let client of clients) {
+    clientsList.push(<Client key={client[0]} client={client} />);
+  }
+
+  return clientsList;
+}
+
 class Clients extends Component {
   constructor(props) {
     super(props);
@@ -14,23 +24,10 @@ class Clients extends Component {
     this.props.getClients(new Map(Object.entries(clients.list)));
   }
 
-  renderClients(clients) {
-    if (clients) {
-      const comp = [];
-      for (let client of clients) {
-        comp.push(<Client client={client} />);
-      }
-
-      return comp;
-    }
-
-    return;
-  }
-
   render() {
     const { clients } = this.props;
 
-    return <div>{this.renderClients(clients)}</div>;
+    return clients && <div>{renderClients(clients)}</div>;
   }
 }
 

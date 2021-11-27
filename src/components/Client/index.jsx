@@ -1,5 +1,7 @@
+import styled from './styles.module.scss';
+
 function Client({ client }) {
-  return <div key={client[0]}>{client[1].firstName}</div>;
+  return <div className={styled.client}>{client[1].firstName}</div>;
 }
 
 export default Client;
