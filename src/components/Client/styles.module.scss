@@ -1,5 +1,25 @@
 @import "src/utilities/variable";
 
 .client {
-  color: $grey;
+  border-bottom: 1px solid $darkBlue;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  .clientName {
+    font-weight: 600;
+    margin-right: 20px;
+  }
+
+  .clientStatus {
+    display: flex;
+
+    span {
+      margin-right: 10px;
+    }
+  }
 }

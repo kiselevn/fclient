@@ -2,17 +2,21 @@ import { Component } from 'react';
 
 import { ClientsContainer } from '../../containers';
 import { Client } from '../../components';
-import clients from '../../assets/list.json';
+import { list } from '../../assets/list.json';
+import { status } from '../../assets/status.json';
+import styled from './styles.module.scss';
 
-function renderClients(clients) {
+const RenderClients = ({ clients, status }) => {
   const clientsList = [];
 
   for (let client of clients) {
-    clientsList.push(<Client key={client[0]} client={client} />);
+    clientsList.push(
+      <Client key={client[0]} client={client} status={status} />
+    );
   }
 
   return clientsList;
-}
+};
 
 class Clients extends Component {
   constructor(props) {
@@ -21,13 +25,20 @@ class Clients extends Component {
   }
 
   componentDidMount() {
-    this.props.getClients(new Map(Object.entries(clients.list)));
+    this.props.getClients(list);
+    this.props.getStatus(status);
   }
 
   render() {
-    const { clients } = this.props;
+    const { clients, status } = this.props;
 
-    return clients && <div>{renderClients(clients)}</div>;
+    return (
+      clients && (
+        <div className={styled.clients}>
+          <RenderClients clients={clients} status={status} />
+        </div>
+      )
+    );
   }
 }
 

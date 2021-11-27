@@ -1,0 +1,13 @@
+@import "./fonts/fonts.css";
+@import "src/utilities/variable";
+
+body {
+  background: $lightBlue;
+  color: $grey;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+}

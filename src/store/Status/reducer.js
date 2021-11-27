@@ -1,15 +1,15 @@
-import * as clientsActions from './actions';
+import * as statusActions from './actions';
 
 const initialState = {
-  clients: null,
+  status: null,
 };
 // eslint-disable-next-line
 export default (state = initialState, action) => {
   switch (action.type) {
-    case clientsActions.GET_CLIENTS:
+    case statusActions.GET_STATUS:
       return {
         ...state,
-        clients: new Map(Object.entries(action.payload)),
+        status: action.payload,
       };
 
     default:
