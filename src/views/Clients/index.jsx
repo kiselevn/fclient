@@ -6,12 +6,18 @@ import { list } from '../../assets/list.json';
 import { status } from '../../assets/status.json';
 import styled from './styles.module.scss';
 
-const RenderClients = ({ clients, status }) => {
+const RenderClients = ({ clients, status, editStatus }) => {
   const clientsList = [];
 
   for (let client of clients) {
     clientsList.push(
-      <Client key={client[0]} client={client} status={status} />
+      <Client
+        key={client[0]}
+        client={client}
+        status={status}
+        clientKey={client[0]}
+        editStatus={editStatus}
+      />
     );
   }
 
@@ -30,12 +36,16 @@ class Clients extends Component {
   }
 
   render() {
-    const { clients, status } = this.props;
+    const { clients, status, editClientStatus } = this.props;
 
     return (
       clients && (
         <div className={styled.clients}>
-          <RenderClients clients={clients} status={status} />
+          <RenderClients
+            clients={clients}
+            status={status}
+            editStatus={editClientStatus}
+          />
         </div>
       )
     );

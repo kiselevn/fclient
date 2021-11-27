@@ -1,3 +1,5 @@
+import styled from './styles.module.scss';
+
 const RenderOption = ({ value, name, defaultValue }) => {
   const optionName = `${name[0].toUpperCase()}${name.slice(1)}`;
   const isSelected = defaultValue === value;
@@ -9,16 +11,20 @@ const RenderOption = ({ value, name, defaultValue }) => {
   );
 };
 
-const Select = ({ options, defaultValue }) => {
+const Select = ({ options, defaultValue, editValue, editedKey }) => {
   return (
     <div>
-      <select>
+      <select
+        className={styled.select}
+        onChange={(e) => editValue(editedKey, e.target.value)}
+      >
         {options.map((option) => (
           <RenderOption
             key={option.code}
             value={option.code}
             name={option.statusText}
             defaultValue={defaultValue}
+            editValue={editValue}
           />
         ))}
       </select>

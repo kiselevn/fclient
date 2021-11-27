@@ -7,6 +7,7 @@ import { statusActions } from '../../store/Status';
 const actions = {
   getClients: clientsActions.getClients,
   getStatus: statusActions.getStatus,
+  editClientStatus: clientsActions.editClientStatus,
 };
 
 const mapStateToProps = (state) => ({

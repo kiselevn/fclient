@@ -1,7 +1,7 @@
 import { Select } from '..';
 import styled from './styles.module.scss';
 
-const Client = ({ client, status }) => {
+const Client = ({ client, status, editStatus, clientKey }) => {
   const clientName = `${client[1].lastName} ${client[1].firstName} ${client[1].patronymic}`;
 
   return (
@@ -9,7 +9,12 @@ const Client = ({ client, status }) => {
       <div className={styled.clientName}>{clientName}</div>
       <div className={styled.clientStatus}>
         <span>Статус:</span>
-        <Select options={status} defaultValue={client[1].status} />
+        <Select
+          options={status}
+          defaultValue={client[1].status}
+          editValue={editStatus}
+          editedKey={clientKey}
+        />
       </div>
     </div>
   );
