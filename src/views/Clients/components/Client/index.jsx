@@ -1,4 +1,5 @@
 import { Select } from '../../../../components';
+
 import styled from './styles.module.scss';
 
 const Client = ({ client, status, editStatus, clientKey }) => {
@@ -7,15 +8,18 @@ const Client = ({ client, status, editStatus, clientKey }) => {
   return (
     <div className={styled.client}>
       <div className={styled.clientName}>{clientName}</div>
-      <div className={styled.clientStatus}>
-        <span>Статус:</span>
-        <Select
-          options={status}
-          defaultValue={client[1].status}
-          editValue={editStatus}
-          editedKey={clientKey}
-        />
-      </div>
+
+      {status && (
+        <div className={styled.clientStatus}>
+          <span>Статус:</span>
+          <Select
+            options={status}
+            defaultValue={client[1].status}
+            editValue={editStatus}
+            editedKey={clientKey}
+          />
+        </div>
+      )}
     </div>
   );
 };

@@ -2,10 +2,10 @@ import { Input } from '../../../../components';
 
 import styled from './styles.module.scss';
 
-const SearchBar = () => {
+const SearchBar = ({ filterClients }) => {
   return (
     <div className={styled.searchBar}>
-      <Input wrapperClassName={styled.searchInput} />
+      <Input wrapperClassName={styled.searchInput} onChange={filterClients} />
     </div>
   );
 };

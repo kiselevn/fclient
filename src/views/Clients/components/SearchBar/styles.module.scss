@@ -9,9 +9,18 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-style: solid;
+  display: flex;
+
+  @media (max-width: 500px) {
+    width: auto;
+  }
 }
 
 .searchInput {
-  width: 100%;
+  flex: 1;
   height: 25px;
+
+  @media (max-width: 500px) {
+    width: auto;
+  }
 }

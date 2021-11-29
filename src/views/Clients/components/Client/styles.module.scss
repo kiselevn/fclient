@@ -12,6 +12,7 @@
 
   .clientName {
     font-weight: 600;
+    font-size: 18px;
     margin-right: 20px;
   }
 
@@ -24,6 +25,6 @@
   }
 
   @media (max-width: 500px) {
-    width: 100%;
+    width: auto;
   }
 }
