@@ -1,7 +1,9 @@
 import { Component } from 'react';
 
+import { Client } from './components';
+import { SearchBar } from './components';
+
 import { ClientsContainer } from '../../containers';
-import { Client } from '../../components';
 import { list } from '../../assets/list.json';
 import { status } from '../../assets/status.json';
 import styled from './styles.module.scss';
@@ -39,15 +41,16 @@ class Clients extends Component {
     const { clients, status, editClientStatus } = this.props;
 
     return (
-      clients && (
-        <div className={styled.clients}>
+      <div className={styled.clients}>
+        <SearchBar />
+        {clients && (
           <RenderClients
             clients={clients}
             status={status}
             editStatus={editClientStatus}
           />
-        </div>
-      )
+        )}
+      </div>
     );
   }
 }

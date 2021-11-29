@@ -11,6 +11,6 @@ export const getClients = (clientsList) => {
 export const editClientStatus = (clientKey, statusCode) => {
   return {
     type: EDIT_CLIENT_STATUS,
-    payload: { key: clientKey, code: statusCode },
+    payload: { key: clientKey, code: Number(statusCode) },
   };
 };

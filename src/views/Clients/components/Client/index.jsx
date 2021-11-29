@@ -1,4 +1,4 @@
-import { Select } from '..';
+import { Select } from '../../../../components';
 import styled from './styles.module.scss';
 
 const Client = ({ client, status, editStatus, clientKey }) => {

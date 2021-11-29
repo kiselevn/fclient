@@ -1,4 +1,4 @@
-import Client from './Client';
 import Select from './Select';
+import Input from './Input';
 
-export { Client, Select };
+export { Select, Input };

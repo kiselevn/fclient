@@ -1,0 +1,17 @@
+@import "src/utilities/variable";
+
+.searchBar {
+  border: 2px solid $darkBlue;
+  border-top: 0;
+  width: 50%;
+  padding: 15px;
+  background-color: $seaBlue;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-style: solid;
+}
+
+.searchInput {
+  width: 100%;
+  height: 25px;
+}

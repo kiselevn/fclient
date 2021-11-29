@@ -1,5 +1,4 @@
 import { createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
 
 import rootReducer from './reducers';
 
@@ -7,7 +6,14 @@ const configureStore = (initialState) => {
   const newStore = createStore(
     rootReducer,
     initialState,
-    composeWithDevTools()
+    window.__REDUX_DEVTOOLS_EXTENSION__ &&
+      window.__REDUX_DEVTOOLS_EXTENSION__({
+        serialize: {
+          options: {
+            map: true,
+          },
+        },
+      })
   );
 
   return newStore;
